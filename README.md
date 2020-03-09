@@ -12,6 +12,8 @@ git cms-addpkg HLTrigger/Configuration
 scram build -j 4
 mkdir hlt
 cd hlt
+
+
 Get HLT configuration: create a script with content as
 ./runhltconfig.sh
 
