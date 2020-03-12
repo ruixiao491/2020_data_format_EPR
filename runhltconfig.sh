@@ -10,7 +10,7 @@ mkdir -p ../L1Trigger/L1TGlobal/data/Luminosity/startup
 cp $emuL1org ../L1Trigger/L1TGlobal/data/Luminosity/startup/
 
 hltGetConfiguration $MENU \
-    --globaltag 101X_dataRun2_HLT_v7 \
+    --globaltag 103X_dataRun2_HLT_v1 \
     --input $FILE \
     --process MYHLT --full --online --data --unprescale --max-events 10 > ${CONFIG}.py
 
@@ -31,8 +31,6 @@ process.hltBitAnalysis = cms.EndPath(process.hltbitanalysis)
 process.TFileService = cms.Service("TFileService",
                                    fileName=cms.string("openHLT.root"))' >> ${CONFIG}.py
 
-set -x
 edmConfigDump ${CONFIG}.py >& ${CONFIG}_DUMP.py
-set +x
+sed -i 's/"rawDataCollector"/"rawDataRepacker"/g' ${CONFIG}_DUMP.py
 
-[[ "x$emulL1" != "x" ]] && { sed -i '1s/^/# /' ${CONFIG}_DUMP.py ; sed -i '/hgcal/s/^/# /' ${CONFIG}_DUMP.py; }
