@@ -68,3 +68,6 @@ menu: MENU="/dev/CMSSW_10_3_0/HIon/V47"
 Run hltconfig:
 
 cmsRun expHLT_130X_ImportV47L1_cfg_DUMP.py
+
+
+after produced expHLT_130X_ImportV47L1_cfg_DUMP.py, we need to change process.rawDataRepacker to process.rawDataRepacker2.
