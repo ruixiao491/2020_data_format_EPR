@@ -33,4 +33,4 @@ process.TFileService = cms.Service("TFileService",
 
 edmConfigDump ${CONFIG}.py >& ${CONFIG}_DUMP.py
 sed -i 's/"rawDataCollector"/"rawDataRepacker"/g' ${CONFIG}_DUMP.py
-
+#sed -i 's/"rawDataRepacker"/"rawDataRepacker_2"/g' ${CONFIG}_DUMP.py
