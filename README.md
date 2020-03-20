@@ -71,3 +71,9 @@ cmsRun expHLT_130X_ImportV47L1_cfg_DUMP.py
 
 
 after produced expHLT_130X_ImportV47L1_cfg_DUMP.py, we need to change process.rawDataRepacker to process.rawDataRepacker2.
+
+
+
+After change process.rawDataRepacker to process.rawDataRepacker2 and remove some not used triggers, the configuration file is now named "expHLT_130X_ImportV47L1_cfg_DUMP_rawdata_repacker2.py.
+In this configuration file, we also try to keep pixel information collection.
+
